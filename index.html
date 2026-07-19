@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* ตั้งค่าสไตล์พื้นฐาน */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ส่วนหัว (Header) */
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* ส่วนแสดงรูปภาพ (Gallery Grid) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* ปรับรูปให้พอดีกรอบ ไม่เบี้ยว */
+            display: block;
+            cursor: pointer;
+        }
+
+        /* สถานะกำลังโหลด / ข้อผิดพลาด */
+        .status-msg {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 3rem;
+            font-size: 1.2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Photography Portfolio</h1>
+        <p>ยินดีต้อนรับสู่คลังภาพผลงานของฉัน อัปเดตสดๆ จาก GitHub</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery" id="portfolio-gallery">
+            <div class="status-msg" id="status-text">กำลังโหลดรูปภาพจาก GitHub...</div>
+        </div>
+    </div>
+
+    <script>
+        // ================= [ ตั้งค่าข้อมูลของคุณตรงนี้ ] =================
+        const GITHUB_USERNAME = 'ชื่อ_Username_ของคุณ'; 
+        const REPO_NAME = 'ชื่อ_Repository_ของคุณ';
+        const IMAGE_FOLDER = 'images'; // ชื่อโฟลเดอร์ที่เก็บรูปภาพ (ถ้าเก็บไว้หน้าแรกสุดให้ใส่เป็น '')
+        // ==========================================================
+
+        const gallery = document.getElementById('portfolio-gallery');
+        const statusText = document.getElementById('status-text');
+
+        async function fetchImages() {
+            // สร้าง URL สำหรับเรียก GitHub API
+            const apiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${IMAGE_FOLDER}`;
+            
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('ไม่สามารถดึงข้อมูลได้ ตรวจสอบ Username หรือ Repo อีกครั้ง');
+                
+                const files = await response.json();
+                
+                // นามสกุลไฟล์รูปภาพที่รองรับ
+                const validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
+                
+                // กรองเฉพาะไฟล์ที่เป็นรูปภาพ
+                const images = files.filter(file => {
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    return validExtensions.includes(ext) && file.type === 'file';
+                });
+
+                if (images.length === 0) {
+                    statusText.innerText = 'ไม่พบรูปภาพในโฟลเดอร์ที่ระบุ';
+                    return;
+                }
+
+                // ลบข้อความกำลังโหลดออก
+                statusText.remove();
+
+                // วนลูปสร้างการ์ดรูปภาพแสดงบนเว็บ
+                images.forEach(img => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    
+                    // ใช้ img.download_url เพื่อดึงรูปภาพแบบ Direct Link มาแสดงผล
+                    item.innerHTML = `<img src="${img.download_url}" alt="${img.name}" loading="lazy">`;
+                    
+                    gallery.appendChild(item);
+                });
+
+            } catch (error) {
+                console.error(error);
+                statusText.innerText = 'เกิดข้อผิดพลาดในการโหลดรูปภาพ: ' + error.message;
+            }
+        }
+
+        // เริ่มทำงานเมื่อเปิดหน้าเว็บ
+        fetchImages();
+    </script>
+</body>
+</html>
