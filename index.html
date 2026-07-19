@@ -1,228 +1,439 @@
+<!-- STREAMING_CHUNK: Configuring head and premium typography... -->
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Arts & Design</title>
+    <title>Kittitach Wijitsin - Viridian Light Exhibition Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- ดึงฟอนต์มาใช้ (เพื่อให้ได้ฟีลแบบงานออกแบบ) -->
+    <!-- Google Fonts: Playfair Display (ตัวอักษรหรูหราอาร์ตๆ) & Kanit (ตัวอักษรอ่านง่ายสไตล์สากล) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanthuli&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome สำหรับสัญลักษณ์ไอคอนตกแต่งแบบคลาสสิก -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* =========================================
-           PALETTE DE_SILPAKORN (ตั้งค่าสีที่นี่)
-           เขียวเวอร์ริเดียน: #41826e
-           พื้นหลังอ่อน: #fafdfb
-        ========================================= */
-        :root {
-            --primary-green: #41826e; /* สีประจำมหา'ลัย */
-            --dark-green: #2a5a4c;
-            --light-green-bg: #f2f8f5;
-            --accent-gold: #bfa57d; /* สีทองแดง/ดินเผาจางๆ */
-            --main-text: #333;
-            --bg-white: #fafdfb;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Kanthuli', sans-serif; /* ฟอนต์ไทย */
-            background-color: var(--bg-white);
-            color: var(--main-text);
-            line-height: 1.8;
-            letter-spacing: 0.02rem;
+            font-family: 'Kanit', sans-serif;
+            background-color: #F4FAF8; /* สีขาวอมเขียวตั้งแชพาสเทลสว่าง */
+        }
+        .font-serif-lux {
+            font-family: 'Playfair Display', serif;
         }
 
-        /* ฟอนต์หัวข้อหลัก (ภาษาอังกฤษใช้ Prata) */
-        h1, h2, h3 {
-            font-family: 'Prata', serif;
-            font-weight: 400;
+        /* 🟢 แสงออร่าสีเขียวตั้งแชเรืองรองแบบสว่าง (Radiant Viridian Aura) */
+        @keyframes subtle-glow {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.15; }
+            50% { transform: translateY(-15px) scale(1.08); opacity: 0.25; }
+        }
+        .animate-viridian-glow {
+            animation: subtle-glow 10s infinite ease-in-out;
         }
 
-        /* ส่วนหัว (Header) */
-        header {
-            text-align: center;
-            padding: 6rem 1rem 4rem 1rem;
-            background-color: var(--light-green-bg);
-            border-bottom: 1px solid rgba(65, 130, 110, 0.1);
-            position: relative;
+        /* 🏛️ เอฟเฟกต์ยกตัวของกรอบแกลเลอรีสไตล์นิทรรศการเดี่ยว */
+        .gallery-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(0, 122, 109, 0.15);
         }
-        
-        /* เพิ่มเส้นสายแบบ Minimal */
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-green);
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 122, 109, 0.12);
+            border-color: #007a6d; /* สีเขียวตั้งแชเด่นชัดขึ้น */
         }
 
-        header h1 {
-            font-size: 3rem;
-            color: var(--dark-green);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.05rem;
+        /* ✨ แถบเลื่อน Scrollbar สีเขียวตั้งแชมินิมอล */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        header p {
-            font-size: 1.1rem;
-            color: var(--primary-green);
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 0 auto;
+        ::-webkit-scrollbar-track {
+            background: #F4FAF8;
         }
-
-        /* ส่วนแสดงรูปภาพ (Gallery Container) */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
+        ::-webkit-scrollbar-thumb {
+            background: #007a6d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E2B65C; /* สีทองแชมเปญ */
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px; /* เพิ่มระยะห่างให้ดูโปร่ง */
-        }
-
-        /* Gallery Item (Artsy Style) */
-        .gallery-item {
-            background: white;
-            border-radius: 0px; /* ลดความโค้งเพื่อให้ดูคลาสสิก */
+        .no-scroll {
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(65, 130, 110, 0.05); /* เงาสีเขียวจางๆ */
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-            position: relative;
         }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: 0px solid var(--accent-gold);
-            transition: border-width 0.3s ease;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 50px rgba(65, 130, 110, 0.12);
-        }
-
-        /* เมื่อ hover จะมีเส้นขอบสีทองแดงจางๆ */
-        .gallery-item:hover::before {
-            border-width: 4px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px; /* เพิ่มความสูงของรูป */
-            object-fit: cover;
-            display: block;
-            cursor: pointer;
-            filter: grayscale(10%) contrast(95%); /* ปรับสีรูปเล็กน้อยให้คุมโทน */
-            transition: filter 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            filter: grayscale(0%) contrast(100%);
-        }
-
-        /* สถานะกำลังโหลด / ข้อผิดพลาด */
-        .status-msg {
-            text-align: center;
-            grid-column: 1 / -1;
-            padding: 5rem;
-            font-size: 1.2rem;
-            color: var(--primary-green);
-            opacity: 0.7;
-        }
-        
-        /* Footnote */
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: var(--primary-green);
-            opacity: 0.6;
-            border-top: 1px solid rgba(65, 130, 110, 0.05);
-        }
-
     </style>
 </head>
-<body>
 
-    <header>
-        <h1>Creative Works</h1>
-        <p>นิทรรศการผลงานศิลปะและการออกแบบดิจิทัล อัปเดตผ่านระบบคลังภาพ GitHub</p>
-    </header>
+<!-- STREAMING_CHUNK: Styling layout with custom active states and light grids... -->
+<body class="text-slate-700 min-h-screen antialiased selection:bg-[#007a6d] selection:text-white overflow-x-hidden relative">
 
-    <div class="container">
-        <div class="gallery" id="portfolio-gallery">
-            <div class="status-msg" id="status-text">กำลังดึงข้อมูลงานศิลป์...</div>
+    <!-- 🟢 พื้นหลังเฉดสว่างอมเขียวพาสเทล พร้อมลายเส้นตาข่ายบางเบาเลียนแบบพิมพ์เขียวสถาปัตยกรรม -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[10%] left-[-5%] w-[40rem] h-[40rem] bg-[#007a6d]/10 rounded-full blur-[120px] animate-viridian-glow"></div>
+        <div class="absolute bottom-[5%] right-[-5%] w-[35rem] h-[35rem] bg-[#E2B65C]/8 rounded-full blur-[140px] animate-viridian-glow" style="animation-delay: -3s;"></div>
+        
+        <!-- ลายตารางกริดสร้างมิติทางศิลปะ -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,122,109,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,122,109,0.015)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+    </div>
+
+
+    <!-- ================= FLOATING GLASS NAVIGATION BAR ================= -->
+    <!-- STREAMING_CHUNK: Building floating navigation header... -->
+    <div class="fixed top-0 left-0 w-full z-50 px-6 py-4">
+        <header class="max-w-6xl mx-auto bg-white/85 backdrop-blur-xl border border-[#007a6d]/10 rounded-full px-8 py-3.5 flex justify-between items-center shadow-[0_10px_30px_rgba(0,122,109,0.06)]">
+            
+            <!-- โลโก้สถาบันสร้างสรรค์ของคุณกิตติธัช -->
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 rounded-full border border-[#007a6d] flex items-center justify-center font-serif-lux text-[#007a6d] text-sm font-bold group-hover:bg-[#007a6d] group-hover:text-white transition-all">
+                    K
+                </div>
+                <span class="font-serif-lux tracking-[0.18em] text-[#007a6d] text-xs font-bold group-hover:opacity-80 transition-opacity">
+                    KITTITACH.STUDIO
+                </span>
+            </a>
+
+            <!-- เมนูสารบัญนิทรรศการเลื่อนนุ่มนวล -->
+            <nav class="hidden md:flex space-x-8 font-semibold text-xs uppercase tracking-[0.2em] text-[#007a6d]/80">
+                <a href="#home" class="hover:text-[#007a6d] hover:underline decoration-2 underline-offset-4 transition-all">หน้าแรก</a>
+                <a href="#about" class="hover:text-[#007a6d] hover:underline decoration-2 underline-offset-4 transition-all">ประวัติ</a>
+                <a href="#education" class="hover:text-[#007a6d] hover:underline decoration-2 underline-offset-4 transition-all">การศึกษา</a>
+                <a href="#portfolio" class="hover:text-[#007a6d] hover:underline decoration-2 underline-offset-4 transition-all">ผลงาน</a>
+                <a href="#contact" class="hover:text-[#007a6d] hover:underline decoration-2 underline-offset-4 transition-all">ติดต่อ</a>
+            </nav>
+
+            <!-- ตราประจำธีมสีเขียวตั้งแชสว่างอันทรงคุณค่า -->
+            <div class="bg-[#007a6d]/10 border border-[#007a6d]/30 px-3.5 py-1 rounded-full font-serif-lux text-[9px] text-[#007a6d] font-bold tracking-widest uppercase">
+                VIRIDIAN STATE 🌱
+            </div>
+
+        </header>
+    </div>
+
+
+    <!-- ================= HERO SECTION (ต้อนรับสู่หอศิลป์ศิลปกรเดี่ยว) ================= -->
+    <!-- STREAMING_CHUNK: Rendering hero banner with high-impact serif titles... -->
+    <section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6 relative z-10" id="home">
+        <div class="max-w-6xl w-full grid md:grid-cols-12 gap-12 items-center">
+            
+            <!-- สารบรรยายทางซ้ายที่สะอาดและเด่นชัด -->
+            <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 border-l-2 border-[#E2B65C] pl-4">
+                    <span class="font-serif-lux text-xs tracking-[0.25em] text-[#007a6d] font-bold uppercase">
+                        SU CREATIVE PORTFOLIO 2026
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-black leading-tight text-slate-800 tracking-tight">
+                    <span class="font-serif-lux font-normal italic text-[#007a6d]">นาย</span>กิตติธัช วิจิตรศิลป์
+                </h1>
+                
+                <h2 class="text-lg md:text-xl font-bold tracking-[0.1em] text-[#E2B65C] uppercase">
+                    Interactive Design & Digital Exhibition
+                </h2>
+                
+                <p class="text-sm md:text-base text-slate-500 max-w-lg leading-relaxed font-light">
+                    แกลเลอรีจำลองผลงานและแนวคิดการออกแบบสื่อปฏิสัมพันธ์ ดิจิทัลมีเดีย และงานศิลปะร่วมสมัย ภายใต้แรงบันดาลใจจากความงดงามทางประวัติศาสตร์และศิลปวัฒนธรรมสากลของมหาวิทยาลัยศิลปากร
+                </p>
+                
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="#portfolio" class="bg-[#007a6d] hover:bg-[#005e54] text-white font-semibold text-xs tracking-[0.15em] px-8 py-4 rounded-full shadow-lg shadow-[#007a6d]/10 transition-all transform hover:-translate-y-0.5">
+                        เข้าชมผลงาน <i class="fa-solid fa-chevron-right ml-1.5 text-xs"></i>
+                    </a>
+                    <a href="#about" class="bg-white hover:bg-slate-50 text-[#007a6d] font-semibold text-xs tracking-[0.15em] px-8 py-4 rounded-full border border-[#007a6d]/20 shadow-sm transition-all transform hover:-translate-y-0.5">
+                        อ่านปรัชญาความคิด
+                    </a>
+                </div>
+            </div>
+
+            <!-- กรอบแสดงภาพพอร์ตโปรไฟล์สว่างลอยตัวสวยงาม -->
+            <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                <div class="relative">
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-[#E2B65C] to-[#007a6d] rounded-[2.5rem] opacity-20 blur-lg animate-viridian-glow"></div>
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 bg-white border border-[#007a6d]/20 p-4 rounded-[2.5rem] shadow-[0_20px_45px_rgba(0,122,109,0.08)]">
+                        <img src="images/profile.jpg" alt="Profile" class="w-full h-full object-cover rounded-[1.8rem] bg-slate-50" onerror="this.src='https://placehold.co/500x500/f4faf8/007a6d?text=KITTITACH'">
+                        
+                        <!-- ป้ายทองเรืองแสงที่หัวมุมรูปภาพเพื่อมิติที่สมบูรณ์ -->
+                        <div class="absolute bottom-6 -right-3 bg-[#E2B65C] text-white px-4 py-1.5 rounded-lg shadow-md border border-white/50">
+                            <span class="font-serif-lux text-[9px] font-bold tracking-[0.15em] uppercase">No. 01 / ORIGINAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= ABOUT ME SECTION (ประวัติและอุดมการณ์ศิลปะ) ================= -->
+    <!-- STREAMING_CHUNK: Laying out personal biography and creative philosophy... -->
+    <section class="py-24 px-6 max-w-6xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="about">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+            
+            <!-- ซีกซ้าย: สารบรรณารักษ์ข้อมูลส่วนตัว -->
+            <div class="md:col-span-5 space-y-6">
+                <div class="space-y-1">
+                    <span class="font-serif-lux text-[10px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block">STUDIO RECORD</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">บันทึกประวัติทั่วไป</h2>
+                    <div class="w-12 h-1 bg-[#E2B65C] rounded-full mt-2"></div>
+                </div>
+
+                <div class="bg-white border border-[#007a6d]/10 rounded-3xl p-8 space-y-5 shadow-sm">
+                    <div class="space-y-4 text-sm font-semibold text-slate-600">
+                        <p class="flex justify-between border-b border-[#007a6d]/5 pb-3.5">
+                            <span class="text-slate-400">ชื่อ-นามสกุล :</span> 
+                            <span class="text-[#007a6d] font-extrabold">นายกิตติธัช วิจิตรศิลป์</span>
+                        </p>
+                        <p class="flex justify-between border-b border-[#007a6d]/5 pb-3.5">
+                            <span class="text-slate-400">โรงเรียนเดิม :</span> 
+                            <span class="text-slate-700">[ ระบุชื่อโรงเรียนเดิมของคุณ ]</span>
+                        </p>
+                        <p class="flex justify-between border-b border-[#007a6d]/5 pb-3.5">
+                            <span class="text-slate-400">แผนการเรียน :</span> 
+                            <span class="text-slate-700">[ ระบุแผนการเรียนของคุณ ]</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ซีกขวา: ปรัชญาศิลป์ (Curator Statement) -->
+            <div class="md:col-span-7 space-y-6">
+                <div class="space-y-1">
+                    <span class="font-serif-lux text-[10px] tracking-[0.3em] text-[#E2B65C] font-bold uppercase block">CURATOR STATEMENT</span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">ปรัชญาความคิดสร้างสรรค์</h2>
+                    <div class="w-12 h-1 bg-[#007a6d] rounded-full mt-2"></div>
+                </div>
+
+                <div class="bg-gradient-to-br from-white to-[#F4FAF8] border border-[#007a6d]/15 rounded-3xl p-8 shadow-sm relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-[10rem] text-[#007a6d]/5 pointer-events-none font-serif-lux font-bold">SU</div>
+                    
+                    <p class="text-sm md:text-base text-slate-600 leading-relaxed font-light italic font-serif-lux">
+                        "งานศิลปะไม่ใช่แค่การบันทึกภาพความสวยงาม แต่คือการประสานวิทยาการ เทคโนโลยี และจิตวิญญาณแห่งวัฒนธรรมไว้ร่วมกัน เพื่อเปิดประตูสู่โอกาสการเรียนรู้ใหม่ ๆ และสร้างสรรค์ประโยชน์เพื่อสังคมอย่างแท้จริง"
+                    </p>
+                    
+                    <div class="mt-8 pt-6 border-t border-[#007a6d]/10 flex justify-between items-center text-[10px] text-[#007a6d] font-bold tracking-widest font-serif-lux">
+                        <span>SU_ESTHETICS // CREATIVE SPIRIT</span>
+                        <span>BY KITTITACH</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= EDUCATION TIMELINE (เส้นทางการเรียนรู้) ================= -->
+    <!-- STREAMING_CHUNK: Constructing elegant timeline for academics... -->
+    <section class="py-24 px-6 max-w-5xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="education">
+        <div class="mb-16 text-center">
+            <span class="font-serif-lux text-[10px] tracking-[0.3em] text-[#E2B65C] font-bold uppercase block mb-2">EDUCATION PATHWAY</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">ประวัติการศึกษาผ่านบันทึกศิลป์</h2>
+            <div class="w-12 h-1 bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- รางและหมุดการเรียนรู้สไตล์สะอาด มินิมอลเรียบง่ายที่สุด -->
+        <div class="relative border-l-2 border-[#007a6d]/20 ml-6 md:ml-48 space-y-10">
+            
+            <!-- มัธยมศึกษาตอนปลาย -->
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-[#007a6d] group-hover:bg-[#007a6d] transition-all"></div>
+                
+                <div class="absolute left-[-155px] top-1 hidden md:block w-32 text-right">
+                    <span class="font-serif-lux text-[10px] tracking-[0.2em] text-[#007a6d] font-bold">HIGH SCHOOL</span>
+                </div>
+
+                <div class="bg-white border border-[#007a6d]/10 p-6 rounded-2xl hover:border-[#007a6d]/30 shadow-sm transition-all">
+                    <h3 class="font-extrabold text-base text-slate-800">ระดับมัธยมศึกษาตอนปลาย</h3>
+                    <p class="text-xs text-[#007a6d] font-bold mt-1.5">[ ระบุชื่อโรงเรียนของคุณ / ปีการศึกษา ]</p>
+                </div>
+            </div>
+
+            <!-- มัธยมศึกษาตอนต้น -->
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-[#007a6d] group-hover:bg-[#007a6d] transition-all"></div>
+                
+                <div class="absolute left-[-155px] top-1 hidden md:block w-32 text-right">
+                    <span class="font-serif-lux text-[10px] tracking-[0.2em] text-[#007a6d]/70 font-bold">MIDDLE SCHOOL</span>
+                </div>
+
+                <div class="bg-white border border-[#007a6d]/10 p-6 rounded-2xl hover:border-[#007a6d]/30 shadow-sm transition-all">
+                    <h3 class="font-extrabold text-base text-slate-800">ระดับมัธยมศึกษาตอนต้น</h3>
+                    <p class="text-xs text-[#007a6d] font-bold mt-1.5">[ ระบุชื่อโรงเรียนของคุณ / ปีการศึกษา ]</p>
+                </div>
+            </div>
+
+            <!-- ประถมศึกษา -->
+            <div class="relative pl-8 group">
+                <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-[#007a6d]/30 group-hover:bg-[#007a6d] transition-all"></div>
+                
+                <div class="absolute left-[-155px] top-1 hidden md:block w-32 text-right">
+                    <span class="font-serif-lux text-[10px] tracking-[0.2em] text-[#007a6d]/50 font-bold">PRIMARY LEVEL</span>
+                </div>
+
+                <div class="bg-white border border-[#007a6d]/10 p-6 rounded-2xl hover:border-[#007a6d]/30 shadow-sm transition-all">
+                    <h3 class="font-extrabold text-base text-slate-800">ระดับประถมศึกษา</h3>
+                    <p class="text-xs text-[#007a6d] font-bold mt-1.5">[ ระบุชื่อโรงเรียนของคุณ / ปีการศึกษา ]</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= PORTFOLIO EXHIBITION CATALOG (นิทรรศการผลงาน 11 หน้า) ================= -->
+    <!-- STREAMING_CHUNK: Generating the 11-page exhibition gallery... -->
+    <section class="py-24 px-6 max-w-6xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="portfolio">
+        <div class="mb-14 text-center">
+            <span class="font-serif-lux text-[10px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">EXHIBITION ROOMS</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">จัดแสดงแฟ้มผลงานศิลปะ (11 หน้า)</h2>
+            <p class="text-xs text-[#007a6d] mt-3.5 tracking-widest uppercase font-bold">[ คลิกที่กรอบแสดงงานชิ้นใดก็ได้เพื่อส่องดูแบบขยายใหญ่ ]</p>
+            <div class="w-12 h-1 bg-[#E2B65C] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- บอร์ดผลงานโคลนสวยงามสไตล์มินิมอลขาวโปร่งคลีน สะอาดที่สุด -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <script>
+                // วนลูปประมวลผลการแสดงผลงานอย่างสมบูรณ์ไร้รอยต่อ
+                for (let i = 1; i <= 11; i++) {
+                    document.write(`
+                        <div class="group bg-white border border-[#007a6d]/10 p-3 rounded-2xl shadow-sm gallery-card cursor-pointer relative" onclick="openLightbox('images/page${i}.jpg')">
+                            <div class="aspect-[3/4] bg-[#F4FAF8] rounded-xl overflow-hidden relative border border-[#007a6d]/5">
+                                <img src="images/page${i}.jpg" alt="Exhibition Art ${i}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103" onerror="this.src='https://placehold.co/300x400/f4faf8/007a6d?text=Page+${i}'">
+                                <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white font-serif-lux font-bold text-[10px] bg-[#007a6d] border border-white/20 px-3.5 py-1.5 rounded-full shadow-lg tracking-[0.15em] uppercase">EXPAND</span>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <span class="font-serif-lux text-[9px] font-bold text-[#007a6d]/70 group-hover:text-[#007a6d] transition-colors tracking-widest uppercase block">CATALOG_PAGE_${i.toString().padStart(2, '0')}</span>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+    </section>
+
+
+    <!-- ================= CONTACT TERMINAL (ข้อมูลติดต่อ) ================= -->
+    <!-- STREAMING_CHUNK: Assembling contact connections and terminal cards... -->
+    <section class="py-24 px-6 max-w-4xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="contact">
+        <div class="mb-14 text-center">
+            <span class="font-serif-lux text-[10px] tracking-[0.3em] text-[#E2B65C] font-bold uppercase block mb-2">STUDIO COMMUNICATIONS</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">การเชื่อมต่อและติดต่อสัมพันธ์</h2>
+            <div class="w-12 h-1 bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
+        </div>
+
+        <!-- ชุดคอนแทคต์การ์ดเรียงในสไตล์แผงควบคุมสว่าง สะอาด โปร่งตา -->
+        <div class="bg-white border border-[#007a6d]/10 p-6 md:p-8 rounded-[2rem] shadow-sm grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Email -->
+            <div class="flex items-center gap-4 p-5 bg-[#F4FAF8] border border-[#007a6d]/10 hover:border-[#007a6d] rounded-2xl transition-all duration-300">
+                <div class="w-12 h-12 bg-[#007a6d]/10 text-[#007a6d] border border-[#007a6d]/20 rounded-xl flex items-center justify-center text-lg"><i class="fa-solid fa-envelope"></i></div>
+                <div class="overflow-hidden text-left">
+                    <span class="text-[9px] font-serif-lux text-slate-400 font-bold block tracking-wider">EMAIL</span>
+                    <span class="text-sm font-semibold text-[#007a6d] block truncate">[ อีเมลของคุณกิตติธัช ]</span>
+                </div>
+            </div>
+
+            <!-- Facebook -->
+            <div class="flex items-center gap-4 p-5 bg-[#F4FAF8] border border-[#007a6d]/10 hover:border-[#007a6d] rounded-2xl transition-all duration-300">
+                <div class="w-12 h-12 bg-blue-50 text-blue-500 border border-blue-100 rounded-xl flex items-center justify-center text-lg"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="overflow-hidden text-left">
+                    <span class="text-[9px] font-serif-lux text-slate-400 font-bold block tracking-wider">FACEBOOK</span>
+                    <span class="text-sm font-semibold text-slate-700 block truncate">[ เฟซบุ๊กของคุณกิตติธัช ]</span>
+                </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="flex items-center gap-4 p-5 bg-[#F4FAF8] border border-[#007a6d]/10 hover:border-[#007a6d] rounded-2xl transition-all duration-300">
+                <div class="w-12 h-12 bg-pink-50 text-pink-500 border border-pink-100 rounded-xl flex items-center justify-center text-lg"><i class="fa-brands fa-instagram"></i></div>
+                <div class="overflow-hidden text-left">
+                    <span class="text-[9px] font-serif-lux text-slate-400 font-bold block tracking-wider">INSTAGRAM</span>
+                    <span class="text-sm font-semibold text-slate-700 block truncate">[ ไอจีของคุณกิตติธัช ]</span>
+                </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="flex items-center gap-4 p-5 bg-[#F4FAF8] border border-[#007a6d]/10 hover:border-[#007a6d] rounded-2xl transition-all duration-300">
+                <div class="w-12 h-12 bg-slate-100 text-slate-600 border border-slate-200 rounded-xl flex items-center justify-center text-lg"><i class="fa-brands fa-github"></i></div>
+                <div class="overflow-hidden text-left">
+                    <span class="text-[9px] font-serif-lux text-slate-400 font-bold block tracking-wider">GITHUB</span>
+                    <span class="text-sm font-semibold text-slate-700 block truncate">[ กิตฮับของคุณกิตติธัช ]</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= LIGHTBOX SYSTEM MODAL ================= -->
+    <!-- STREAMING_CHUNK: Developing robust lightbox zooming systems... -->
+    <div id="lightbox" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-[100] flex-col items-center justify-center p-4 transition-all duration-300 opacity-0">
+        <!-- ปุ่มปิดระบบขยายสวยงามชัดเจนเสถียรที่สุด -->
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-600 bg-white border border-[#007a6d]/15 text-xl w-11 h-11 flex items-center justify-center rounded-full shadow-lg hover:text-[#007a6d] transition-all">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-3xl max-h-[85vh] overflow-hidden rounded-2xl border border-white bg-white p-2.5 shadow-2xl">
+            <img id="lightbox-img" class="w-full h-full object-contain max-h-[82vh] rounded-xl" src="" alt="Expanded Artwork View">
         </div>
     </div>
 
-    <footer>
-        <p>Ars Longa, Vita Brevis</p>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-white text-slate-400 py-10 text-center font-serif-lux text-[10px] tracking-[0.2em] border-t border-[#007a6d]/10 relative z-10">
+        © 2026 KITTITACH WIJITSIN. EXHIBITED UNDER VIRIDIAN SILPAKORN RESEARCH MOTIFS.
     </footer>
 
+
+    <!-- ================= JAVASCRIPT CONTROLLERS ================= -->
+    <!-- STREAMING_CHUNK: Binding interactions and touch behaviors for lightbox... -->
     <script>
-        // ================= [ ตั้งค่าข้อมูลของคุณตรงนี้ ] =================
-        const GITHUB_USERNAME = 'ชื่อ_Username_ของคุณ'; 
-        const REPO_NAME = 'ชื่อ_Repository_ของคุณ';
-        const IMAGE_FOLDER = 'images'; // โฟลเดอร์ที่เก็บรูป
-        // ==========================================================
-
-        const gallery = document.getElementById('portfolio-gallery');
-        const statusText = document.getElementById('status-text');
-
-        async function fetchImages() {
-            const apiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${IMAGE_FOLDER}`;
+        // 1. ระบบควบคุมการเปิดและปิด Lightbox ขยายรูปภาพผลงานพอร์ตโฟลิโอความเสถียรสูง
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
             
-            try {
-                const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error('ไม่พบข้อมูล Repo หรือโฟลเดอร์');
-                
-                const files = await response.json();
-                
-                const validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
-                
-                const images = files.filter(file => {
-                    const ext = file.name.split('.').pop().toLowerCase();
-                    return validExtensions.includes(ext) && file.type === 'file';
-                });
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+            }, 10);
 
-                if (images.length === 0) {
-                    statusText.innerText = 'ยังไม่มีผลงานในคลังภาพนี้';
-                    return;
-                }
-
-                statusText.remove();
-
-                images.forEach(img => {
-                    const item = document.createElement('div');
-                    item.className = 'gallery-item';
-                    item.innerHTML = `<img src="${img.download_url}" alt="${img.name}" loading="lazy">`;
-                    gallery.appendChild(item);
-                });
-
-            } catch (error) {
-                console.error(error);
-                statusText.innerText = 'เกิดข้อผิดพลาดในการโหลดงาน: ' + error.message;
-            }
+            document.body.classList.add('no-scroll');
         }
 
-        fetchImages();
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                lightbox.classList.remove('flex');
+                lightbox.classList.add('hidden');
+            }, 200);
+
+            document.body.classList.remove('no-scroll');
+        }
+
+        // ปิดป๊อปอัปเมื่อคลิกรอบนอกเพื่อเอื้อต่อความสะดวกในการรับชม
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // เปิดให้ใช้ปุ่ม Escape คีย์บอร์ดในการปิดรูปเพื่อความเป็นสากล
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
     </script>
+
 </body>
 </html>
+```eof
