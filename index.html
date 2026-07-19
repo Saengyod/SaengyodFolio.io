@@ -1,52 +1,52 @@
-<!-- STREAMING_CHUNK: Configuring head and minimalist typography... -->
+<!-- STREAMING_CHUNK: Configuring document header, fonts, and viridian colors... -->
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saengyod Tamul - Modern Minimalist Portfolio</title>
+    <title>Saengyod Tamul - Premium Viridian Portfolio</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Plus Jakarta Sans & IBM Plex Sans Thai เพื่อความคลีน เรียบหรูระดับสากล -->
+    <!-- Google Fonts: Plus Jakarta Sans & IBM Plex Sans Thai เพื่อความคลีน เรียบหรู สะกดทุกสายตา -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome สำหรับชุดไอคอนแบบเรียบง่ายแต่ครบถ้วน -->
+    <!-- FontAwesome สำหรับชุดไอคอนตกแต่ง -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- STREAMING_CHUNK: Styling layout with custom scrollbar and transitions... -->
+    <!-- STREAMING_CHUNK: Designing custom neon viridian shadows and animation systems... -->
     <style>
         body {
             font-family: 'IBM Plex Sans Thai', 'Plus Jakarta Sans', sans-serif;
-            background-color: #FAFAFA; /* ขาวสว่างแบบอุ่นสบายตา */
+            background-color: #F8FCFA; /* สีขาวอุ่นอมเขียวพาสเทลจางๆ */
         }
         .font-eng {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* 🟢 เอฟเฟกต์ยกตัวอย่างนุ่มนวลเป็นธรรมชาติสไตล์มินิมอล */
-        .minimal-card {
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        /* 🟢 การ์ดแบบเรืองแสงสีเขียวตั้งแชอันทรงคุณค่าเมื่อสัมผัส */
+        .viridian-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .minimal-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px rgba(0, 122, 109, 0.08);
-            border-color: rgba(0, 122, 109, 0.25);
+        .viridian-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px -10px rgba(0, 122, 109, 0.15);
+            border-color: #007a6d;
         }
 
-        /* ✨ ตกแต่งแถบเลื่อนสไตล์เรียบเท่ */
+        /* ✨ ตกแต่งแถบเลื่อนสไตล์มินิมอลสีเขียวตั้งแช */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #FAFAFA;
+            background: #F8FCFA;
         }
         ::-webkit-scrollbar-thumb {
-            background: #E2E8F0;
+            background: #CCECE8;
             border-radius: 99px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -59,80 +59,104 @@
     </style>
 </head>
 
-<body class="text-[#334155] min-h-screen antialiased selection:bg-[#007a6d] selection:text-white overflow-x-hidden relative">
+<body class="text-slate-700 min-h-screen antialiased selection:bg-[#007a6d] selection:text-white overflow-x-hidden relative">
 
-    <!-- STREAMING_CHUNK: Building minimalist navigation header... -->
-    <!-- ================= MINIMAL NAVIGATION BAR ================= -->
+    <!-- STREAMING_CHUNK: Injecting radiant viridian mesh background lines... -->
+    <!-- 🟢 พื้นหลังแต่งแต้มแสงเงาสีเขียวตั้งแชเด่นชัด และตารางโครงตาข่ายแบบมินิมอล -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-[-5%] left-[-10%] w-[35rem] h-[35rem] bg-[#007a6d]/10 rounded-full blur-[130px]"></div>
+        <div class="absolute bottom-[10%] right-[-10%] w-[40rem] h-[40rem] bg-[#007a6d]/8 rounded-full blur-[150px]"></div>
+        
+        <!-- ลายตารางศิลป์พรีเมียม -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,122,109,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,122,109,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+    </div>
+
+
+    <!-- ================= FLOATING GLASS NAVIGATION BAR ================= -->
+    <!-- STREAMING_CHUNK: Structuring the floating menu bar... -->
     <div class="fixed top-0 left-0 w-full z-50 px-6 py-4">
-        <header class="max-w-5xl mx-auto bg-white/70 backdrop-blur-md border border-slate-100 rounded-2xl px-6 py-3 flex justify-between items-center shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+        <header class="max-w-5xl mx-auto bg-white/80 backdrop-blur-md border border-[#007a6d]/20 rounded-2xl px-6 py-3.5 flex justify-between items-center shadow-[0_10px_35px_rgba(0,122,109,0.05)]">
             
-            <!-- โลโก้มินิมอลอักษรย่อ -->
-            <a href="#home" class="flex items-center gap-2 group">
-                <span class="font-eng font-extrabold tracking-widest text-[#007a6d] text-sm group-hover:opacity-80 transition-opacity">
+            <!-- โลโก้สีเขียวเด่นชัด -->
+            <a href="#home" class="flex items-center gap-2.5 group">
+                <div class="w-7 h-7 bg-[#007a6d] text-white flex items-center justify-center rounded-lg font-eng font-black text-xs shadow-md shadow-[#007a6d]/20">
+                    S
+                </div>
+                <span class="font-eng font-extrabold tracking-wider text-[#007a6d] text-xs uppercase">
                     SAENGYOD.T
                 </span>
             </a>
 
-            <!-- เมนูสารบัญนิทรรศการมินิมอล -->
-            <nav class="hidden md:flex space-x-8 font-medium text-xs tracking-wider text-slate-500">
-                <a href="#home" class="hover:text-[#007a6d] transition-colors">หน้าแรก</a>
-                <a href="#about" class="hover:text-[#007a6d] transition-colors">ประวัติ</a>
-                <a href="#education" class="hover:text-[#007a6d] transition-colors">การศึกษา</a>
-                <a href="#portfolio" class="hover:text-[#007a6d] transition-colors">ผลงาน</a>
-                <a href="#contact" class="hover:text-[#007a6d] transition-colors">ติดต่อ</a>
+            <!-- รายการสารบัญสีเขียวตั้งแช -->
+            <nav class="hidden md:flex space-x-8 font-semibold text-xs tracking-wider text-slate-500">
+                <a href="#home" class="hover:text-[#007a6d] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#007a6d] hover:after:w-full after:transition-all after:duration-300">หน้าแรก</a>
+                <a href="#about" class="hover:text-[#007a6d] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#007a6d] hover:after:w-full after:transition-all after:duration-300">ประวัติส่วนตัว</a>
+                <a href="#education" class="hover:text-[#007a6d] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#007a6d] hover:after:w-full after:transition-all after:duration-300">ประวัติการศึกษา</a>
+                <a href="#portfolio" class="hover:text-[#007a6d] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#007a6d] hover:after:w-full after:transition-all after:duration-300">แฟ้มผลงาน</a>
+                <a href="#contact" class="hover:text-[#007a6d] transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#007a6d] hover:after:w-full after:transition-all after:duration-300">ช่องทางติดต่อ</a>
             </nav>
 
-            <!-- ตราพอร์ตโฟลิโอสีเขียวตั้งแชเรียบง่าย -->
-            <div class="bg-[#007a6d]/5 border border-[#007a6d]/15 px-3.5 py-1 rounded-lg font-eng text-[9px] text-[#007a6d] font-bold tracking-widest">
-                SU_ENTRY_2026
+            <!-- แถบระบุเป้าหมายสว่างสดใส -->
+            <div class="bg-[#007a6d] text-white px-3.5 py-1.5 rounded-xl font-eng text-[9px] font-bold tracking-widest shadow-md shadow-[#007a6d]/15">
+                SU_RECRUIT_2026
             </div>
 
         </header>
     </div>
 
 
-    <!-- ================= HERO SECTION (ต้อนรับแบบมินิมอล) ================= -->
-    <!-- STREAMING_CHUNK: Designing elegant minimalist hero section... -->
+    <!-- ================= HERO SECTION (อสมมาตรสีเขียวตั้งแชโดดเด่นสะกดสายตา) ================= -->
+    <!-- STREAMING_CHUNK: Designing complex asymmetrical hero section with profile overlay... -->
     <section class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6 relative z-10" id="home">
         <div class="max-w-5xl w-full grid md:grid-cols-12 gap-12 items-center">
             
-            <!-- บรรยายทางซ้ายที่สะอาด คลีน คมชัด -->
-            <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
-                <div class="inline-flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#007a6d]"></span>
-                    <span class="font-eng text-[10px] tracking-[0.2em] text-[#007a6d] font-bold uppercase">
-                        PORTFOLIO EXHIBITION
-                    </span>
-                </div>
-                
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-800 tracking-tight">
-                    นางสาวแสงยอด ตามูล
-                </h1>
-                
-                <h2 class="font-eng text-xs font-semibold tracking-[0.25em] text-[#E2B65C] uppercase">
-                    Silpakorn University Candidate
-                </h2>
-                
-                <p class="text-sm md:text-base text-slate-400 max-w-md leading-relaxed font-light">
-                    แกลเลอรีจัดแสดงผลงานและประวัติเพื่อเข้าศึกษาต่อ นำเสนอด้วยการออกแบบที่เรียบง่าย คลีนสะอาดตา และให้ความสำคัญกับรายละเอียดของชิ้นงานเป็นอันดับแรก
-                </p>
-                
-                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-                    <a href="#portfolio" class="bg-[#007a6d] hover:bg-[#005e54] text-white font-medium text-xs tracking-wider px-7 py-3.5 rounded-xl shadow-sm transition-all">
-                        เข้าชมผลงาน
-                    </a>
-                    <a href="#about" class="bg-white hover:bg-slate-50 text-[#007a6d] font-medium text-xs tracking-wider px-7 py-3.5 rounded-xl border border-slate-200 shadow-sm transition-all">
-                        อ่านปรัชญาความคิด
-                    </a>
+            <!-- ด้านขวา: บล็อกรูปภาพโปรไฟล์ที่มีแผงหลังสีเขียวตั้งแชเข้มข้นขับสว่างโดดเด่น (สลับตำแหน่งขึ้นก่อนเพื่อความแปลกใหม่ทางสายตา) -->
+            <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                <div class="relative w-full max-w-[280px] md:max-w-[320px]">
+                    <!-- แผงพื้นหลังสีเขียวตั้งแชอสมมาตรแบบลาดเอียงสวยงาม -->
+                    <div class="absolute inset-0 bg-[#007a6d] rounded-[2rem] transform rotate-3 translate-x-2 translate-y-3 shadow-xl shadow-[#007a6d]/20"></div>
+                    
+                    <!-- การ์ดกระจกขาวสว่างครอบด้านบนชูรูปโปรไฟล์ให้เด่นขึ้น -->
+                    <div class="relative bg-white border border-[#007a6d]/10 p-3 rounded-[2rem] shadow-lg">
+                        <img src="images/profile.jpg" alt="Profile" class="w-full h-auto object-cover rounded-[1.6rem] bg-slate-100" onerror="this.src='https://placehold.co/500x500/fafafa/007a6d?text=SAENGYOD'">
+                        
+                        <!-- ป้ายสีทองแชมเปญเรืองแสงมุมรูปภาพ -->
+                        <div class="absolute bottom-5 -left-4 bg-[#E2B65C] text-white px-4 py-1.5 rounded-xl shadow-md border border-white/40">
+                            <span class="font-eng text-[9px] font-bold tracking-widest uppercase">CANDIDATE_N0.01</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ภาพโปรไฟล์ขอบมนมินิมอลพรีเมียม -->
-            <div class="md:col-span-5 flex justify-center order-1 md:order-2">
-                <div class="relative">
-                    <div class="relative w-64 h-64 md:w-72 md:h-72 bg-white border border-slate-100 p-2 rounded-2xl shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)]">
-                        <img src="images/profile.jpg" alt="Profile" class="w-full h-full object-cover rounded-xl bg-slate-50" onerror="this.src='https://placehold.co/500x500/fafafa/007a6d?text=SAENGYOD'">
-                    </div>
+            <!-- ด้านซ้าย: ข้อความต้อนรับและรายละเอียดหลัก -->
+            <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 bg-[#007a6d]/10 border border-[#007a6d]/30 px-3.5 py-1.5 rounded-xl">
+                    <span class="w-2 h-2 rounded-full bg-[#007a6d] animate-ping"></span>
+                    <span class="font-eng text-[10px] tracking-[0.15em] text-[#007a6d] font-extrabold uppercase">
+                        SILPAKORN UNIVERSITY ADMISSION
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-black leading-tight text-slate-800 tracking-tight">
+                    นางสาวแสงยอด ตามูล
+                </h1>
+                
+                <h2 class="text-lg md:text-xl font-bold tracking-[0.05em] text-[#007a6d] flex items-center justify-center md:justify-start gap-2">
+                    <span>PORTFOLIO FOR EDUCATION</span>
+                    <span class="h-[2px] w-8 bg-[#E2B65C]"></span>
+                </h2>
+                
+                <p class="text-sm md:text-base text-slate-500 max-w-lg leading-relaxed font-light">
+                    ยินดีต้อนรับคณะกรรมการสู่แกลเลอรีจำลองสะสมผลงานของฉันค่ะ นี่คือพื้นที่รวบรวมประวัติการเรียนรู้ โครงงาน และกิจกรรมสร้างสรรค์ที่พัฒนาขึ้นด้วยความตั้งใจจริง เพื่อก้าวไปสู่การเป็นส่วนหนึ่งของรั้วมหาวิทยาลัยศิลปากรค่ะ
+                </p>
+                
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                    <a href="#portfolio" class="bg-[#007a6d] hover:bg-[#005e54] text-white font-bold text-xs tracking-wider px-8 py-4 rounded-xl shadow-lg shadow-[#007a6d]/20 transition-all transform hover:-translate-y-0.5">
+                        รับชมผลงานสะสม <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                    </a>
+                    <a href="#about" class="bg-white hover:bg-slate-50 text-[#007a6d] font-bold text-xs tracking-wider px-8 py-4 rounded-xl border border-[#007a6d]/20 shadow-sm transition-all transform hover:-translate-y-0.5">
+                        เป้าหมายอุดมการณ์
+                    </a>
                 </div>
             </div>
 
@@ -140,56 +164,68 @@
     </section>
 
 
-    <!-- ================= ABOUT ME SECTION (ประวัติและอุดมการณ์) ================= -->
-    <!-- STREAMING_CHUNK: Laying out personal profile and target goal cards... -->
-    <section class="py-24 px-6 max-w-5xl mx-auto relative z-10 border-t border-slate-100" id="about">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+    <!-- ================= ABOUT ME SECTION (จัดวางใหม่ในรูปแบบ Bento Grid สวยงาม) ================= -->
+    <!-- STREAMING_CHUNK: Organizing profile components in a Bento layout grid... -->
+    <section class="py-24 px-6 max-w-5xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="about">
+        
+        <!-- หัวข้อประวัติส่วนตัวเด่นตระการตา -->
+        <div class="mb-12 text-center md:text-left">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 flex items-center gap-3 justify-center md:justify-start">
+                <span class="w-8 h-8 rounded-lg bg-[#007a6d]/10 text-[#007a6d] flex items-center justify-center text-sm"><i class="fa-solid fa-user-check"></i></span>
+                <span>ประวัติส่วนตัวและเจตจำนง</span>
+            </h2>
+            <div class="w-12 h-1 bg-[#007a6d] rounded-full mt-3 mx-auto md:mx-0"></div>
+        </div>
+
+        <!-- การจัดวางผัง Bento Grid สีเขียวตั้งแชชูสปอตไลต์ -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
             
-            <!-- ข้อมูลทั่วไปมินิมอล -->
-            <div class="md:col-span-5 space-y-6 flex flex-col justify-between bg-white border border-slate-100 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.01)] minimal-card">
-                <div class="space-y-4">
+            <!-- การ์ด 1: ข้อมูลทั่วไปพื้นฐาน (Bento Card - 5 คอลัมน์) -->
+            <div class="md:col-span-5 bg-white border border-slate-100 rounded-3xl p-8 shadow-sm flex flex-col justify-between viridian-card">
+                <div class="space-y-6">
                     <div class="space-y-1">
-                        <span class="font-eng text-[9px] tracking-widest text-[#007a6d] font-bold uppercase block">STUDIO RECORD</span>
-                        <h2 class="text-xl font-bold text-slate-800">ข้อมูลส่วนตัว</h2>
+                        <span class="font-eng text-[9px] tracking-widest text-[#007a6d] font-bold uppercase block">STUDIO BIO-DATA</span>
+                        <h3 class="text-lg font-bold text-slate-800">ข้อมูลผู้สมัครเรียน</h3>
                     </div>
 
-                    <div class="space-y-4 text-xs font-medium text-slate-500 pt-2">
+                    <div class="space-y-4 text-xs font-semibold text-slate-500 pt-2">
                         <p class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>ชื่อ-นามสกุล</span> 
-                            <span class="text-[#007a6d] font-bold">นางสาวแสงยอด ตามูล</span>
+                            <span class="text-slate-400">ชื่อ-นามสกุล :</span> 
+                            <span class="text-[#007a6d] font-bold text-sm">นางสาวแสงยอด ตามูล</span>
                         </p>
                         <p class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>โรงเรียน</span> 
+                            <span class="text-slate-400">โรงเรียน :</span> 
                             <span class="text-slate-700">กระทุ่มแบน "วิเศษสมุทคุณ"</span>
                         </p>
                         <p class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>แผนการเรียน</span> 
-                            <span class="text-slate-700">[ แผนการเรียน ]</span>
+                            <span class="text-slate-400">แผนการเรียน :</span> 
+                            <span class="text-slate-700">[ ระบุแผนการเรียน ]</span>
                         </p>
                     </div>
                 </div>
                 
                 <div class="text-[9px] font-eng text-slate-300 font-bold tracking-widest mt-6">
-                    MEMBER // VERIFIED RECORD
+                    MEMBER RECORD // SU APPLICANT
                 </div>
             </div>
 
-            <!-- เป้าหมายมินิมอลพรีเมียม -->
-            <div class="md:col-span-7 space-y-6 flex flex-col justify-between bg-white border border-slate-100 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.01)] minimal-card">
-                <div class="space-y-4">
-                    <div class="space-y-1">
-                        <span class="font-eng text-[9px] tracking-widest text-[#E2B65C] font-bold uppercase block">TARGET MOTIVE</span>
-                        <h2 class="text-xl font-bold text-slate-800">เป้าหมายในการศึกษาต่อ</h2>
-                    </div>
-
-                    <p class="text-sm text-slate-500 leading-relaxed font-light pt-2">
-                        "ความรู้คือใบเบิกทาง การเรียนต่อระดับที่สูงขึ้นจะช่วยปลดล็อกโอกาส และพาฉันไปสู่เป้าหมายในอาชีพที่ฝันไว้"
+            <!-- การ์ด 2: เป้าหมายทางการเรียนรู้ (Bento Card เด่นสีเขียวตั้งแชเรืองแสง - 7 คอลัมน์) -->
+            <div class="md:col-span-7 bg-gradient-to-br from-[#007a6d] to-[#005e54] text-white border border-[#007a6d] rounded-3xl p-8 shadow-md flex flex-col justify-between relative overflow-hidden">
+                <!-- ลายน้ำ SU โลโก้ด้านหลังแบบโปร่งแสง -->
+                <div class="absolute -bottom-10 -right-10 text-[11rem] text-white/5 font-eng font-black pointer-events-none select-none">SU</div>
+                
+                <div class="space-y-4 relative z-10">
+                    <span class="font-eng text-[9px] tracking-widest text-[#E2B65C] font-bold uppercase block">TARGET MOTIVE</span>
+                    <h3 class="text-lg font-bold text-white">เป้าหมายสูงสุดในการศึกษาต่อ</h3>
+                    
+                    <p class="text-sm md:text-base text-teal-50/90 leading-relaxed font-light pt-2">
+                        "ฉันเชื่อว่าความรู้คือใบเบิกทางและโอกาสที่ไร้ขอบเขต การได้เข้าศึกษาต่อในสถาบันแห่งความภาคภูมิใจอย่างมหาวิทยาลัยศิลปากร จะช่วยเปิดรับแรงบันดาลใจใหม่ ๆ ปลดล็อกทักษะเพื่อนำไปขับเคลื่อนอาชีพในฝันได้อย่างสมบูรณ์"
                     </p>
                 </div>
 
-                <div class="border-t border-slate-50 pt-4 flex justify-between items-center text-[9px] text-[#007a6d] font-bold tracking-widest">
-                    <span>SU_STUDENT_CODE</span>
-                    <span>BY SAENGYOD</span>
+                <div class="border-t border-teal-600/50 pt-4 flex justify-between items-center text-[9px] text-[#E2B65C] font-bold tracking-widest relative z-10 mt-8">
+                    <span>EDUCATIONAL MINDSET</span>
+                    <span>BY SAENGYOD 🌱</span>
                 </div>
             </div>
 
@@ -197,74 +233,76 @@
     </section>
 
 
-    <!-- ================= EDUCATION TIMELINE (การศึกษา) ================= -->
-    <!-- STREAMING_CHUNK: Structuring precise minimalist education timeline... -->
-    <section class="py-24 px-6 max-w-4xl mx-auto relative z-10 border-t border-slate-100" id="education">
+    <!-- ================= EDUCATION SECTION (ไทม์ไลน์สลับซ้ายขวาสไตล์อาร์ต) ================= -->
+    <!-- STREAMING_CHUNK: Setting up asymmetrical education loop path... -->
+    <section class="py-24 px-6 max-w-4xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="education">
+        
         <div class="mb-16 text-center">
-            <span class="font-eng text-[9px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">ACADEMIC JOURNEY</span>
-            <h2 class="text-2xl font-bold text-slate-800">ประวัติการศึกษา</h2>
-            <div class="w-8 h-[2px] bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
+            <span class="font-eng text-[9px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">EDUCATION PATHWAY</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800">บันทึกประวัติการศึกษา</h2>
+            <div class="w-12 h-1 bg-[#E2B65C] mx-auto mt-3 rounded-full"></div>
         </div>
 
-        <!-- ไทม์ไลน์เรียบง่ายที่เน้นเส้นสายมินิมอลคมชัด -->
-        <div class="relative border-l border-slate-200 ml-6 md:ml-40 space-y-8">
+        <!-- ไทม์ไลน์สลับข้างแบบอสมมาตร มีความลึก ไม่เรียบง่ายเกินไป -->
+        <div class="relative wrap overflow-hidden p-2">
+            <!-- เส้นแนวดิ่งสีเขียวตั้งแชเชื่อมต่อเส้นทาง -->
+            <div class="absolute border-l-2 border-[#007a6d]/30 h-full left-1/2 transform -translate-x-1/2"></div>
             
-            <!-- มัธยมศึกษาตอนปลาย -->
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[5px] top-2.5 w-2.5 h-2.5 rounded-full bg-white border border-[#007a6d] group-hover:bg-[#007a6d] transition-all"></div>
+            <!-- สเต็ป 1: มัธยมศึกษาตอนปลาย (ฝั่งซ้าย) -->
+            <div class="mb-10 flex justify-between items-center w-full right-timeline">
+                <div class="w-5/12 hidden md:block"></div>
+                <!-- จุดเรืองแสงตรงกลางบอร์ด -->
+                <div class="z-20 flex items-center order-1 bg-[#007a6d] shadow-xl w-7 h-7 rounded-full justify-center text-white border-4 border-white text-[10px] font-eng font-bold">2</div>
                 
-                <div class="absolute left-[-140px] top-2 hidden md:block w-28 text-right">
-                    <span class="font-eng text-[10px] tracking-widest text-[#007a6d] font-bold">HIGH SCHOOL</span>
-                </div>
-
-                <div class="bg-white border border-slate-100 p-6 rounded-xl hover:border-[#007a6d]/20 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.01)]">
-                    <h3 class="font-bold text-sm text-slate-800">ระดับมัธยมศึกษาตอนปลาย</h3>
-                    <p class="text-xs text-[#007a6d] font-medium mt-1">โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"</p>
+                <div class="order-1 bg-white border border-[#007a6d]/10 rounded-2xl w-full md:w-5/12 px-6 py-5 shadow-sm hover:border-[#007a6d] transition-all">
+                    <span class="font-eng text-[9px] text-[#007a6d] font-extrabold tracking-widest uppercase">HIGH SCHOOL</span>
+                    <h3 class="font-bold text-base text-slate-800 mt-1">ระดับมัธยมศึกษาตอนปลาย</h3>
+                    <p class="text-xs text-slate-400 font-semibold mt-1">โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"</p>
                 </div>
             </div>
 
-            <!-- มัธยมศึกษาตอนต้น -->
-            <div class="relative pl-8 group">
-                <div class="absolute -left-[5px] top-2.5 w-2.5 h-2.5 rounded-full bg-white border border-slate-300 group-hover:bg-[#007a6d] transition-all"></div>
+            <!-- สเต็ป 2: มัธยมศึกษาตอนต้น (ฝั่งขวา) -->
+            <div class="mb-10 flex justify-between items-center w-full left-timeline">
+                <div class="order-1 bg-white border border-[#007a6d]/10 rounded-2xl w-full md:w-5/12 px-6 py-5 shadow-sm hover:border-[#007a6d] transition-all">
+                    <span class="font-eng text-[9px] text-slate-400 font-extrabold tracking-widest uppercase">MIDDLE SCHOOL</span>
+                    <h3 class="font-bold text-base text-slate-800 mt-1">ระดับมัธยมศึกษาตอนต้น</h3>
+                    <p class="text-xs text-slate-400 font-semibold mt-1">โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"</p>
+                </div>
                 
-                <div class="absolute left-[-140px] top-2 hidden md:block w-28 text-right">
-                    <span class="font-eng text-[10px] tracking-widest text-slate-400 font-bold">MIDDLE SCHOOL</span>
-                </div>
-
-                <div class="bg-white border border-slate-100 p-6 rounded-xl hover:border-[#007a6d]/20 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.01)]">
-                    <h3 class="font-bold text-sm text-slate-800">ระดับมัธยมศึกษาตอนต้น</h3>
-                    <p class="text-xs text-slate-400 font-medium mt-1">โรงเรียนกระทุ่มแบน "วิเศษสมุทคุณ"</p>
-                </div>
+                <div class="z-20 flex items-center order-1 bg-slate-300 shadow-xl w-7 h-7 rounded-full justify-center text-white border-4 border-white text-[10px] font-eng font-bold">1</div>
+                <div class="w-5/12 hidden md:block"></div>
             </div>
 
         </div>
     </section>
 
 
-    <!-- ================= PORTFOLIO EXHIBITION CATALOG (ผลงาน 11 หน้า) ================= -->
-    <!-- STREAMING_CHUNK: Assembling clean gallery catalog grid... -->
-    <section class="py-24 px-6 max-w-5xl mx-auto relative z-10 border-t border-slate-100" id="portfolio">
+    <!-- ================= PORTFOLIO EXHIBITION CATALOG (ผลงาน 11 หน้าจัดแสดงเด่นคมชัด) ================= -->
+    <!-- STREAMING_CHUNK: Processing 11-page exhibition layout engine... -->
+    <section class="py-24 px-6 max-w-5xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="portfolio">
+        
         <div class="mb-14 text-center">
-            <span class="font-eng text-[9px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">MINIMALIST CATALOG</span>
-            <h2 class="text-2xl font-bold text-slate-800">แฟ้มสะสมผลงาน</h2>
-            <p class="text-[10px] text-slate-400 mt-2 tracking-widest uppercase font-bold">[ คลิกเพื่อเปิดดูชิ้นงานขนาดใหญ่ ]</p>
-            <div class="w-8 h-[2px] bg-[#E2B65C] mx-auto mt-3 rounded-full"></div>
+            <span class="font-eng text-[9px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">CATALOG ARCHIVE</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">แฟ้มสะสมผลงานรวม 11 หน้า</h2>
+            <p class="text-[10px] text-[#007a6d] font-bold mt-2.5 tracking-widest uppercase animate-pulse">[ คลิกที่รูปภาพเพื่อตรวจสอบชิ้นงานความละเอียดสูง ]</p>
+            <div class="w-12 h-1 bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
         </div>
 
-        <!-- กริดแกลเลอรีมินิมอลแบบไร้ขอบหนา เน้นเนื้อหาด้านในสะอาดสะอ้าน -->
+        <!-- ตารางโครงแกลเลอรีแบบสว่าง มีมิติยกตัวเมื่อชี้ และมีเงาสีเขียวจางๆ -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             <script>
+                // วนลูปประมวลผลการแสดงผลงานอย่างสมบูรณ์ไร้รอยต่อ
                 for (let i = 1; i <= 11; i++) {
                     document.write(`
-                        <div class="group bg-white border border-slate-100 p-2 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] minimal-card cursor-pointer relative" onclick="openLightbox('images/page${i}.jpg')">
-                            <div class="aspect-[3/4] bg-slate-50 rounded-lg overflow-hidden relative border border-slate-50">
-                                <img src="images/page${i}.jpg" alt="Exhibition Art ${i}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102" onerror="this.src='https://placehold.co/300x400/fafafa/007a6d?text=Page+${i}'">
+                        <div class="group bg-white border border-slate-100 p-2.5 rounded-2xl shadow-sm viridian-card cursor-pointer relative" onclick="openLightbox('images/page${i}.jpg')">
+                            <div class="aspect-[3/4] bg-slate-50 rounded-xl overflow-hidden relative border border-[#007a6d]/5 shadow-inner">
+                                <img src="images/page${i}.jpg" alt="Exhibition Art ${i}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103" onerror="this.src='https://placehold.co/300x400/fafafa/007a6d?text=Page+${i}'">
                                 <div class="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span class="text-slate-800 font-eng font-bold text-[9px] bg-white px-3 py-1.5 rounded-lg shadow-sm tracking-[0.1em] uppercase">VIEW</span>
+                                    <span class="text-white font-eng font-bold text-[9px] bg-[#007a6d] border border-white/20 px-3 py-1.5 rounded-xl shadow-md tracking-[0.1em] uppercase">VIEW ART</span>
                                 </div>
                             </div>
                             <div class="mt-2 text-center">
-                                <span class="font-eng text-[9px] font-bold text-slate-400 group-hover:text-[#007a6d] transition-colors tracking-widest uppercase block">PAGE_${i.toString().padStart(2, '0')}</span>
+                                <span class="font-eng text-[9px] font-bold text-slate-400 group-hover:text-[#007a6d] transition-colors tracking-widest uppercase block">CATALOG_PAGE_${i.toString().padStart(2, '0')}</span>
                             </div>
                         </div>
                     `);
@@ -274,21 +312,22 @@
     </section>
 
 
-    <!-- ================= CONTACT SECTION (ช่องทางติดต่อ) ================= -->
-    <!-- STREAMING_CHUNK: Crafting elegant contact communication slots... -->
-    <section class="py-24 px-6 max-w-4xl mx-auto relative z-10 border-t border-slate-100" id="contact">
+    <!-- ================= CONTACT SECTION (ช่องทางติดต่อจัดกลุ่มใหม่สว่างสะดุดตา) ================= -->
+    <!-- STREAMING_CHUNK: Structuring high-impact clean contact terminals... -->
+    <section class="py-24 px-6 max-w-4xl mx-auto relative z-10 border-t border-[#007a6d]/10" id="contact">
+        
         <div class="mb-14 text-center">
-            <span class="font-eng text-[9px] tracking-[0.3em] text-[#007a6d] font-bold uppercase block mb-2">CONNECTIONS</span>
-            <h2 class="text-2xl font-bold text-slate-800">ช่องทางการติดต่อ</h2>
-            <div class="w-8 h-[2px] bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
+            <span class="font-eng text-[9px] tracking-[0.3em] text-[#E2B65C] font-bold uppercase block mb-2">CONNECTIONS</span>
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800">ช่องทางการติดต่อ</h2>
+            <div class="w-12 h-1 bg-[#007a6d] mx-auto mt-3 rounded-full"></div>
         </div>
 
-        <!-- การ์ดติดต่อแบบสว่าง คลีน เรียบเท่ที่สุด -->
-        <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.01)] grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- ชุดคอนแทคต์การ์ดสว่างคมกริบเรืองแสงสีเขียวตั้งแชเด่นชัดเมื่อ Hover -->
+        <div class="bg-white border border-[#007a6d]/10 p-6 md:p-8 rounded-[2rem] shadow-sm grid grid-cols-1 sm:grid-cols-2 gap-4">
             
             <!-- Email -->
-            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-[#007a6d]/20 transition-all">
-                <div class="w-10 h-10 bg-[#007a6d]/10 text-[#007a6d] rounded-lg flex items-center justify-center text-base"><i class="fa-solid fa-envelope"></i></div>
+            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 hover:border-[#007a6d] rounded-2xl transition-all duration-300 group cursor-pointer">
+                <div class="w-10 h-10 bg-[#007a6d]/10 text-[#007a6d] group-hover:bg-[#007a6d] group-hover:text-white rounded-xl flex items-center justify-center text-lg shadow-inner transition-all duration-300"><i class="fa-solid fa-envelope"></i></div>
                 <div class="overflow-hidden text-left">
                     <span class="text-[9px] font-eng text-slate-400 font-bold block tracking-wider">EMAIL</span>
                     <span class="text-xs font-semibold text-slate-600 block truncate">[ ระบุอีเมล ]</span>
@@ -296,8 +335,8 @@
             </div>
 
             <!-- Facebook -->
-            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-[#007a6d]/20 transition-all">
-                <div class="w-10 h-10 bg-blue-50 text-blue-500 rounded-lg flex items-center justify-center text-base"><i class="fa-brands fa-facebook-f"></i></div>
+            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 hover:border-[#007a6d] rounded-2xl transition-all duration-300 group cursor-pointer">
+                <div class="w-10 h-10 bg-blue-50 text-blue-500 group-hover:bg-blue-500 group-hover:text-white rounded-xl flex items-center justify-center text-lg shadow-inner transition-all duration-300"><i class="fa-brands fa-facebook-f"></i></div>
                 <div class="overflow-hidden text-left">
                     <span class="text-[9px] font-eng text-slate-400 font-bold block tracking-wider">FACEBOOK</span>
                     <span class="text-xs font-semibold text-slate-600 block truncate">[ ระบุเฟซบุ๊ก ]</span>
@@ -305,8 +344,8 @@
             </div>
 
             <!-- Instagram -->
-            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-[#007a6d]/20 transition-all">
-                <div class="w-10 h-10 bg-pink-50 text-pink-500 rounded-lg flex items-center justify-center text-base"><i class="fa-brands fa-instagram"></i></div>
+            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 hover:border-[#007a6d] rounded-2xl transition-all duration-300 group cursor-pointer">
+                <div class="w-10 h-10 bg-pink-50 text-pink-500 group-hover:bg-pink-500 group-hover:text-white rounded-xl flex items-center justify-center text-lg shadow-inner transition-all duration-300"><i class="fa-brands fa-instagram"></i></div>
                 <div class="overflow-hidden text-left">
                     <span class="text-[9px] font-eng text-slate-400 font-bold block tracking-wider">INSTAGRAM</span>
                     <span class="text-xs font-semibold text-slate-600 block truncate">[ ระบุไอจี ]</span>
@@ -314,8 +353,8 @@
             </div>
 
             <!-- GitHub -->
-            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 rounded-xl hover:border-[#007a6d]/20 transition-all">
-                <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-lg flex items-center justify-center text-base"><i class="fa-brands fa-github"></i></div>
+            <div class="flex items-center gap-4 p-4 bg-slate-50/50 border border-slate-100 hover:border-[#007a6d] rounded-2xl transition-all duration-300 group cursor-pointer">
+                <div class="w-10 h-10 bg-slate-100 text-slate-600 group-hover:bg-slate-800 group-hover:text-white rounded-xl flex items-center justify-center text-lg shadow-inner transition-all duration-300"><i class="fa-brands fa-github"></i></div>
                 <div class="overflow-hidden text-left">
                     <span class="text-[9px] font-eng text-slate-400 font-bold block tracking-wider">GITHUB</span>
                     <span class="text-xs font-semibold text-slate-600 block truncate">[ ระบุกิตฮับ ]</span>
@@ -327,10 +366,10 @@
 
 
     <!-- ================= LIGHTBOX SYSTEM MODAL ================= -->
-    <!-- STREAMING_CHUNK: Integrating stable custom lightbox zoom logic... -->
+    <!-- STREAMING_CHUNK: Embedding stable modal display components... -->
     <div id="lightbox" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden z-[100] flex-col items-center justify-center p-4 transition-all duration-300 opacity-0">
-        <!-- ปุ่มปิดกล่องขยายมินิมอล -->
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-400 bg-white border border-slate-100 text-base w-10 h-10 flex items-center justify-center rounded-full shadow-sm hover:text-[#007a6d] transition-all">
+        <!-- ปุ่มปิดกล่องขยายพรีเมียม -->
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-500 bg-white border border-slate-100 text-base w-10 h-10 flex items-center justify-center rounded-full shadow-sm hover:text-[#007a6d] transition-all">
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="max-w-3xl max-h-[85vh] overflow-hidden rounded-2xl border border-white bg-white p-2 shadow-xl">
@@ -346,8 +385,9 @@
 
 
     <!-- ================= JAVASCRIPT CONTROLLERS ================= -->
+    <!-- STREAMING_CHUNK: Integrating user event handlers and lightbox listeners... -->
     <script>
-        // 1. ควบคุมระบบขยายรูปภาพ (Lightbox) ความเสถียรสูงสุด
+        // 1. ควบคุมการขยายรูปภาพผลงานพอร์ตโฟลิโอ (Lightbox) ความเสถียรสูงสุด
         function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -375,14 +415,14 @@
             document.body.classList.remove('no-scroll');
         }
 
-        // ปิดเมื่อคลิกรอบนอกตัวรูปภาพ
+        // ปิดป๊อปอัปเมื่อคลิกนอกเหนือภาพพรีวิว
         document.getElementById('lightbox').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeLightbox();
             }
         });
 
-        // เปิดรับการกด Escape คีย์บอร์ดในการปิดเพื่อความสะดวก
+        // เปิดให้ใช้ปุ่ม Escape คีย์บอร์ดในการปิดรูปภาพ
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeLightbox();
@@ -393,3 +433,4 @@
 </body>
 </html>
 ```eof
+portfolio.html
