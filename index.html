@@ -3,145 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio - Arts & Design</title>
+    
+    <!-- ดึงฟอนต์มาใช้ (เพื่อให้ได้ฟีลแบบงานออกแบบ) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanthuli&family=Prata&display=swap" rel="stylesheet">
+
     <style>
-        /* ตั้งค่าสไตล์พื้นฐาน */
+        /* =========================================
+           PALETTE DE_SILPAKORN (ตั้งค่าสีที่นี่)
+           เขียวเวอร์ริเดียน: #41826e
+           พื้นหลังอ่อน: #fafdfb
+        ========================================= */
+        :root {
+            --primary-green: #41826e; /* สีประจำมหา'ลัย */
+            --dark-green: #2a5a4c;
+            --light-green-bg: #f2f8f5;
+            --accent-gold: #bfa57d; /* สีทองแดง/ดินเผาจางๆ */
+            --main-text: #333;
+            --bg-white: #fafdfb;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Kanthuli', sans-serif; /* ฟอนต์ไทย */
+            background-color: var(--bg-white);
+            color: var(--main-text);
+            line-height: 1.8;
+            letter-spacing: 0.02rem;
+        }
+
+        /* ฟอนต์หัวข้อหลัก (ภาษาอังกฤษใช้ Prata) */
+        h1, h2, h3 {
+            font-family: 'Prata', serif;
+            font-weight: 400;
         }
 
         /* ส่วนหัว (Header) */
         header {
             text-align: center;
-            padding: 4rem 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 6rem 1rem 4rem 1rem;
+            background-color: var(--light-green-bg);
+            border-bottom: 1px solid rgba(65, 130, 110, 0.1);
+            position: relative;
         }
+        
+        /* เพิ่มเส้นสายแบบ Minimal */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            color: var(--dark-green);
             margin-bottom: 0.5rem;
+            letter-spacing: -0.05rem;
         }
         header p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--primary-green);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* ส่วนแสดงรูปภาพ (Gallery Grid) */
+        /* ส่วนแสดงรูปภาพ (Gallery Container) */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 4rem 1rem;
         }
+
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px; /* เพิ่มระยะห่างให้ดูโปร่ง */
         }
+
+        /* Gallery Item (Artsy Style) */
         .gallery-item {
             background: white;
-            border-radius: 12px;
+            border-radius: 0px; /* ลดความโค้งเพื่อให้ดูคลาสสิก */
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(65, 130, 110, 0.05); /* เงาสีเขียวจางๆ */
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+            position: relative;
         }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 0px solid var(--accent-gold);
+            transition: border-width 0.3s ease;
+            z-index: 10;
+            pointer-events: none;
+        }
+
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: scale(1.02);
+            box-shadow: 0 20px 50px rgba(65, 130, 110, 0.12);
         }
+
+        /* เมื่อ hover จะมีเส้นขอบสีทองแดงจางๆ */
+        .gallery-item:hover::before {
+            border-width: 4px;
+        }
+
         .gallery-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover; /* ปรับรูปให้พอดีกรอบ ไม่เบี้ยว */
+            height: 300px; /* เพิ่มความสูงของรูป */
+            object-fit: cover;
             display: block;
             cursor: pointer;
+            filter: grayscale(10%) contrast(95%); /* ปรับสีรูปเล็กน้อยให้คุมโทน */
+            transition: filter 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%) contrast(100%);
         }
 
         /* สถานะกำลังโหลด / ข้อผิดพลาด */
         .status-msg {
             text-align: center;
             grid-column: 1 / -1;
-            padding: 3rem;
+            padding: 5rem;
             font-size: 1.2rem;
-            color: #666;
+            color: var(--primary-green);
+            opacity: 0.7;
         }
+        
+        /* Footnote */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--primary-green);
+            opacity: 0.6;
+            border-top: 1px solid rgba(65, 130, 110, 0.05);
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>My Photography Portfolio</h1>
-        <p>ยินดีต้อนรับสู่คลังภาพผลงานของฉัน อัปเดตสดๆ จาก GitHub</p>
+        <h1>Creative Works</h1>
+        <p>นิทรรศการผลงานศิลปะและการออกแบบดิจิทัล อัปเดตผ่านระบบคลังภาพ GitHub</p>
     </header>
 
     <div class="container">
         <div class="gallery" id="portfolio-gallery">
-            <div class="status-msg" id="status-text">กำลังโหลดรูปภาพจาก GitHub...</div>
+            <div class="status-msg" id="status-text">กำลังดึงข้อมูลงานศิลป์...</div>
         </div>
     </div>
+
+    <footer>
+        <p>Ars Longa, Vita Brevis</p>
+    </footer>
 
     <script>
         // ================= [ ตั้งค่าข้อมูลของคุณตรงนี้ ] =================
         const GITHUB_USERNAME = 'ชื่อ_Username_ของคุณ'; 
         const REPO_NAME = 'ชื่อ_Repository_ของคุณ';
-        const IMAGE_FOLDER = 'images'; // ชื่อโฟลเดอร์ที่เก็บรูปภาพ (ถ้าเก็บไว้หน้าแรกสุดให้ใส่เป็น '')
+        const IMAGE_FOLDER = 'images'; // โฟลเดอร์ที่เก็บรูป
         // ==========================================================
 
         const gallery = document.getElementById('portfolio-gallery');
         const statusText = document.getElementById('status-text');
 
         async function fetchImages() {
-            // สร้าง URL สำหรับเรียก GitHub API
             const apiUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${IMAGE_FOLDER}`;
             
             try {
                 const response = await fetch(apiUrl);
-                if (!response.ok) throw new Error('ไม่สามารถดึงข้อมูลได้ ตรวจสอบ Username หรือ Repo อีกครั้ง');
+                if (!response.ok) throw new Error('ไม่พบข้อมูล Repo หรือโฟลเดอร์');
                 
                 const files = await response.json();
                 
-                // นามสกุลไฟล์รูปภาพที่รองรับ
                 const validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
                 
-                // กรองเฉพาะไฟล์ที่เป็นรูปภาพ
                 const images = files.filter(file => {
                     const ext = file.name.split('.').pop().toLowerCase();
                     return validExtensions.includes(ext) && file.type === 'file';
                 });
 
                 if (images.length === 0) {
-                    statusText.innerText = 'ไม่พบรูปภาพในโฟลเดอร์ที่ระบุ';
+                    statusText.innerText = 'ยังไม่มีผลงานในคลังภาพนี้';
                     return;
                 }
 
-                // ลบข้อความกำลังโหลดออก
                 statusText.remove();
 
-                // วนลูปสร้างการ์ดรูปภาพแสดงบนเว็บ
                 images.forEach(img => {
                     const item = document.createElement('div');
                     item.className = 'gallery-item';
-                    
-                    // ใช้ img.download_url เพื่อดึงรูปภาพแบบ Direct Link มาแสดงผล
                     item.innerHTML = `<img src="${img.download_url}" alt="${img.name}" loading="lazy">`;
-                    
                     gallery.appendChild(item);
                 });
 
             } catch (error) {
                 console.error(error);
-                statusText.innerText = 'เกิดข้อผิดพลาดในการโหลดรูปภาพ: ' + error.message;
+                statusText.innerText = 'เกิดข้อผิดพลาดในการโหลดงาน: ' + error.message;
             }
         }
 
-        // เริ่มทำงานเมื่อเปิดหน้าเว็บ
         fetchImages();
     </script>
 </body>
